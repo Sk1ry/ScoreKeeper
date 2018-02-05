@@ -6,4 +6,42 @@
         <!-- Background color of buttons in the app -->
         <item name="colorButtonNormal">#d9facb</item>
     </style>
+
+    <style name="layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="layout_matchp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="layout_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="button_style" parent="layout">
+        <item name="android:layout_marginBottom">@dimen/spaceS</item>
+        <item name="android:layout_marginLeft">@dimen/spaceL</item>
+        <item name="android:layout_marginRight">@dimen/spaceL</item>
+    </style>
+
+    <style name="score_style" parent="layout">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">@dimen/spaceL</item>
+        <item name="android:text">@string/text0</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/textSizeXXL</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="team_style" parent="layout">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/spaceM</item>
+        <item name="android:textColor">@color/textColor1</item>
+        <item name="android:textSize">@dimen/textSizeM</item>
+    </style>
 </resources>
