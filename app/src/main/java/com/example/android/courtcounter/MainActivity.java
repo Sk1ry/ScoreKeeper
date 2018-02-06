@@ -2,10 +2,9 @@ package com.example.android.courtcounter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        // Save away the original text, so we still have it if the activity
-        // needs to be killed while paused.
         super.onSaveInstanceState(outState);
         outState.putInt("ScoreA", scoreTeamA);
         outState.putInt("ScoreB", scoreTeamB);
