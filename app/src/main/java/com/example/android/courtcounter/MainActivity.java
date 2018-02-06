@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,11 +15,33 @@ public class MainActivity extends AppCompatActivity {
     TextView scoreViewB;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         scoreViewA = findViewById(R.id.team_a_score);
         scoreViewB = findViewById(R.id.team_b_score);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // Save away the original text, so we still have it if the activity
+        // needs to be killed while paused.
+        super.onSaveInstanceState(outState);
+        outState.putInt("ScoreA", scoreTeamA);
+        outState.putInt("ScoreB", scoreTeamB);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // restore saved values
+        if(savedInstanceState != null) {
+            scoreTeamA = savedInstanceState.getInt("ScoreA");
+            scoreTeamB = savedInstanceState.getInt("ScoreB");
+        }
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
     }
 
     /**
